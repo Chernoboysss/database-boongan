@@ -1,32 +1,43 @@
 import os
-import operasi
-from operasi import cek_database
-from operasi import registrasi 
+from operasi import cek_data,registrasi,masuk
 
 
 while True :
     os.system("cls")
+    print("SELAMAT DATANG")
+    print("="*20)
     print("""opsi :
-    0.registrasi
-    1.cek data
+    1.registrasi
     2.login
-    3.logout
+    3.keluar
             """)
     is_pilih = input("pilih opsi : ")
-    if is_pilih == "0" :
+    if is_pilih == "1" :
         registrasi.regist()
 
-    elif is_pilih == "1" :
-        cek_database()
-
     elif is_pilih == "2" :
-        print("fitur belum ada")
+        masuk.login()
+        while True :
+            os.system("cls")
+            print("selamat datang")
+            print("""pilih opsi bang
+            1.cek data
+            2.logout
+            """)
+            
+            opsi_user = input("masukan opsi bwang : ")
+            if opsi_user == "1" :
+                cek_data.cek_database()
+                input("")
+            
+            elif opsi_user == "2" :
+                os.system("cls")
+                print("Logout berhasil bwanggg")
+                input("")
+                break
+
 
     elif is_pilih == "3" :
-        print("fitur belum ada")
-
-    is_selesai = input("\nkeluar program (y/n) ?\n")
-    if is_selesai == "y" :
         os.system("cls")
         print("TERIMA KASIH KAKAKAAKAKAKKAKAKKA")
         break

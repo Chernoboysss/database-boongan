@@ -23,6 +23,8 @@ def regist() :
             else:
                 with open("data.txt","a",encoding="utf-8") as file :
                     file.write(data_database)
+                    print("REGISTRASI BERHASIL")
+                    input("")
                 
                 break
                 
